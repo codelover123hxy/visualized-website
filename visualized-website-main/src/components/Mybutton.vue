@@ -15,14 +15,14 @@
 
 <style scoped>
     .btn{
-        width: 100px;
+        width: 300px;
         height:50px;
         font-size: large;
         border-radius: 10px;
         border:none;
-        background-color: rgb(143, 255, 220);
+        background-color: rgb(161, 202, 255);
     }
     .btn:hover{
-        background-color: rgb(181, 255, 232);
+        background-color: rgb(176, 208, 255);
     }
 </style>

@@ -4,25 +4,15 @@ import '@/assets/css/knowledgegraph.css'
 import KnowledgeBranch from '../components/KnowledgeBranch.vue'
 </script>
 <template>
-<div style="font-size:xx-large;text-align: center;">走进线性代数的神秘世界</div>
-<div class="selectbar" style="margin:0 auto">
-    行列式
-</div>
-<div class="selectbar" style="margin:0 auto">
-    线性方程组
-</div>
-<div class="graph1">
-<template v-for="(item,index) in determinant" >
-  <KnowledgeBranch  v-bind:msg=item>{{item}}</KnowledgeBranch> 
+  <div class="content">
+    <div style="font-size:xx-large;text-align: center;">欢迎来到知识讲解部分</div>
+    <div class="select">
+      <div @click.native="toVideo">视频讲解</div>
+      <router-link to="/GraphExplain" ><div @click="toGraph">图文讲解</div></router-link>
+      <div @click="toVisualized">可视化</div>
+    </div>
+  </div>
 </template>
-</div>
-<div class="graph2">
-<template v-for="(item,index) in linear" >
-  <KnowledgeBranch  v-bind:msg=item>{{item}}</KnowledgeBranch>
-</template>
-</div>
-</template>
-
 <script>
 export default{
     name:'App',
@@ -31,11 +21,10 @@ export default{
     },
 data(){
   return{
-    determinant:['n阶行列式','行列式的计算','行列式展开','cramer法则'],
-    linear:['解的判定定理','解的结构'],
-    isShow1:'',
-    isShow2:''
   }
+},
+toVideo(){
+  alert("123");
 },
 created(){
   window.onhashchange=()=>{
@@ -44,16 +33,49 @@ created(){
 }
 }
 </script>
-
 <style scoped>
 .graph1{
-position: absolute;
-left:400px;
-top:100px;
+  position: absolute;
+  left:400px;
+  top:100px;
 }
 .graph2{
-position: absolute;
-left: 400px;
-top:500px;
+  position: absolute;
+  left: 400px;
+  top:500px;
+}
+.select div{
+  width: 200px;
+  height:200px;
+  border-radius: 20px;
+  line-height: 200px;
+  text-align: center;
+  font-size:larger;
+  border:solid aqua 2px;
+  display: inline-block;
+  margin-right: 40px;
+}
+.select :nth-child(1){
+  background-color: rgb(238, 255, 255);
+}
+.select :nth-child(2){
+  background-color: rgb(234, 255, 235);
+}
+.select :nth-child(3){
+  background-color: rgb(255, 253, 230);
+}
+.select :nth-child(1):hover{
+  background: rgb(173, 252, 247);
+}
+.select :nth-child(2):hover{
+  background: rgb(226, 255, 227);
+}
+.select :nth-child(3):hover{
+  background: rgb(240, 255, 197);
+  
+}
+.select{
+  text-align: center;
+  margin:50px auto;
 }
 </style>

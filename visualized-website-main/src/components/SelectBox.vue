@@ -1,5 +1,5 @@
 <template>
-    <div class="selectbox"><input class="select" type="checkbox" name="" id="">{{msg}}</div>
+    <div class="selectbox" style="font-size:larger"><input  class="select" type="checkbox" name="" id="">{{msg}}</div>
 </template>
 
 <script>
@@ -17,5 +17,9 @@
     .selectbox{
         font-size: large;
         height:50px;
+       
+    }
+    .select{
+        width: 30px;
     }
 </style>
