@@ -8,7 +8,7 @@ import KnowledgeBranch from '../components/KnowledgeBranch.vue'
     <div style="font-size:xx-large;text-align: center;">欢迎来到知识讲解部分</div>
     <div class="select">
       <div @click.native="toVideo">视频讲解</div>
-      <router-link to="/GraphExplain" ><div @click="toGraph">图文讲解</div></router-link>
+      <div @click="toGraph">图文讲解</div>
       <div @click="toVisualized">可视化</div>
     </div>
   </div>
@@ -21,10 +21,18 @@ export default{
     },
 data(){
   return{
+
   }
 },
+methods:{
 toVideo(){
   alert("123");
+},
+toGraph(){
+  this.$router.push({
+      path:'GraphExplain'
+  })
+}
 },
 created(){
   window.onhashchange=()=>{

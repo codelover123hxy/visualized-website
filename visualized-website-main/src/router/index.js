@@ -8,6 +8,7 @@ import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import GraphExplain from '../components/GraphExplain.vue'
 import Exam from '../components/Exam.vue'
+import Setting from '../pages/Setting.vue'
 const routes=[
         {path:'/',component:Home},
         {path:'/Mybutton',component:Mybutton},
@@ -17,7 +18,8 @@ const routes=[
         {path:'/Login',component:Login},
         {path:'/Register',component:Register},
         {path:'/GraphExplain',component:GraphExplain},
-        {path:'/Exam',component:Exam}
+        {path:'/Exam',component:Exam},
+        {path:'/Setting',component:Setting}
     ]
 const router=createRouter({
     routes,

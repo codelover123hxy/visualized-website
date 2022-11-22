@@ -4,7 +4,7 @@
             <router-link to="/Home" class="topbar">首页</router-link>
             <router-link to="/KnowledgeGraph" class="topbar">知识图谱</router-link>
             <router-link to="/KnowledgeExplain" class="topbar">知识讲解</router-link>
-            <router-link to="/Home" class="topbar">基础设置</router-link>
+            <router-link to="/Setting" class="topbar">基础设置</router-link>
             <span class="user" >
                 用户名
             </span>

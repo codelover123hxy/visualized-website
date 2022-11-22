@@ -1,17 +1,30 @@
 <template>
-    <div class="content">
+    <div class="content" style="text-align:center">
         <div class="title" style="text-align:center">
             下面线性代数行列式章节测试
-            限时20min
+            限时20min    
+            <el-button type="primary" @click="start" round>开始考试</el-button>
+            <el-button type="danger" round @click="stop">暂停考试</el-button>
+            <el-button type="primary" @click="submit" round>提交试卷</el-button>
+            <div>1.已知A=(1 1 1 1)>
+            1 2 0 0 <br>
+            1 0 3 0 <br>
+            1 0 0 4          求|A|
+            </div> 
+            
+            <option value=""></option>
+
+
+          <p style="text-align:center">剩余时间:{{minute}}分{{second}}秒</p> 
         </div>
-        <button class="start" @click="start">开始考试</button>
-        剩余时间:{{minute}}分{{second}}秒
+   
     </div>
 </template>
 
 <script>
-    import { vModelCheckbox } from 'vue'
+import { vModelCheckbox } from 'vue'
 import TheLatex2Math from './gs.vue'
+var time;
     export default{
         name:"Login",
         props:{
@@ -20,15 +33,24 @@ import TheLatex2Math from './gs.vue'
         data(){
             return{
                minute:20,
-               second:0
+               second:0,
+               score:''
             }
         },
         methods:{
-          
           start(){
+            // var a=document.getElementsByClassName("title");
+            
+            // var e =document.createElement("input");
+            // e.type="button";
+            // e.value="你好"
+
             let that=this;
-            var time=setInterval(function(){
-                if (that.$data.second==0){
+            time=setInterval(function(){
+                if (that.$data.minute==0&&that.$data.second==0){
+                  alert("考试结束!");
+                }
+                else if (that.$data.second==0){
                   that.$data.minute--;
                   that.$data.second=60;
                 }
@@ -37,6 +59,9 @@ import TheLatex2Math from './gs.vue'
           },
           stop(){
             clearInterval(time);
+          },
+          submit(){
+
           }
         },
         components:{
